@@ -36,6 +36,7 @@
       "ecmaVersion": 2019
     },
     "rules": {
+      "no-trailing-spaces": ["error", { "skipBlankLines": true , "ignoreComments": true}],
       "semi": ["off", "always"],
       "no-unused-vars": ["warn", {
         "vars": "all",
