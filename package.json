@@ -2,10 +2,10 @@
   "name": "nodeexpressmongoapi",
   "version": "1.0.0",
   "description": "Javascript-NodeJs-ExpressJs-MongoDb-Api",
-  "main": "server/index.js",
+  "main": "server",
   "scripts": {
-    "start": "nodemon server/index.js",
-    "lint": "eslint server/**/* --ext .js --fix"
+    "start": "nodemon server",
+    "lint": "eslint server/**/*"
   },
   "repository": {
     "type": "git",
