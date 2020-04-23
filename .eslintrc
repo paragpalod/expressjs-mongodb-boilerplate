@@ -15,6 +15,7 @@
     "ecmaVersion": 2019
   },
   "rules": {
+    "semi": ["off", "always"],
     "no-unused-vars": ["warn", {
       "vars": "all",
       "args": "all"

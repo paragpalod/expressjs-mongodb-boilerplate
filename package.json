@@ -4,8 +4,10 @@
   "description": "Javascript-NodeJs-ExpressJs-MongoDb-Api",
   "main": "server",
   "scripts": {
-    "start": "nodemon server",
-    "lint": "eslint server/**/*"
+    "start": "node server",
+    "dev": "nodemon server & eslint server server/**/*",
+    "lint": "eslint server server/**/*",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
