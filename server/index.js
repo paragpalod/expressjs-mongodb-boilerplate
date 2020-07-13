@@ -7,8 +7,8 @@ const swaggerUi = require('./config/swagger');
 // middleware for the entire application imported from middleware folder
 const { authorization } = require('./middleware/auth');
 const morgonMiddleware = require('./middleware/morgon');
-const authRoutes = require('./routes/auth');
-const routes = require('./routes/api');
+const authRoutes = require('./routes/api/authetication/auth');
+const routes = require('./routes');
 
 // express app configuration
 const express = require('express');

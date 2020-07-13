@@ -1,5 +1,5 @@
 const router = require('express').Router();
 
-require('./administrator/example')(router);
+require('./api/administrator/example')(router);
 
 module.exports = router;

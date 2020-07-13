@@ -1,12 +1,12 @@
-const { User } = require('../models');
+const { User } = require('../../../models');
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-const { serverSecret, verificationLink, resetPasswordLink } = require('../config');
+const { serverSecret, verificationLink, resetPasswordLink } = require('../../../config');
 const { check, validationResult } = require('express-validator');
-const { sendMail } = require('../utils/email');
-const { CatchError } = require('../utils/error');
-const { authorization } = require('../middleware/auth');
+const { sendMail } = require('../../../utils/email');
+const { CatchError } = require('../../../utils/error');
+const { authorization } = require('../../../middleware/auth');
 
 /**
  * @swagger
