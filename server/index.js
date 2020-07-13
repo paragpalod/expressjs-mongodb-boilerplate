@@ -1,18 +1,33 @@
-const cluster = require('cluster')
-const numCPUs = require('os').cpus().length
-// const express = require('express')
-// const app = express()
-console.log(numCPUs)
-function startServer () {
-  // using all the cpu your machine has to offer to maximize cpu usage and to increase efficiency
-  for (let i = 0; i < numCPUs; i++) {
-    cluster.fork()
-  }
-  cluster.on('online', (worker) => {
-    console.log(`worker is online, Worker Id: ${worker.id}`)
-  })
-  cluster.on('exit', (worker) => {
-    console.log(`worker ${worker.process.pid} died`)
-    cluster.fork()
-  })
-}
+require('colors');
+
+// application configuration details
+const { port } = require('./config');
+const swaggerUi = require('./config/swagger');
+
+// middleware for the entire application imported from middleware folder
+const { authorization } = require('./middleware/auth');
+const morgonMiddleware = require('./middleware/morgon');
+const authRoutes = require('./routes/api/authetication/auth');
+const routes = require('./routes');
+
+// express app configuration
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+
+// allowing cors for all api calls
+const cors = require('cors');
+app.use(cors());
+
+app.use(morgonMiddleware);
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
+app.listen(port, () => console.log(`Server listening at http://localhost:${port}`));
+
+app.use('/', authRoutes);
+app.use('/api', authorization, routes);
+app.use('/documentation', swaggerUi);
+app.get('*', (req, res) => {
+  res.send({ message: 'Route not found' }, 404);
+});
