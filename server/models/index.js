@@ -15,7 +15,6 @@ Directories.filter(file => {
 // Set default values for mongoose connection
 mongoose.Promise = global.Promise;
 mongoose.set('debug', true);
-mongoose.set('useCreateIndex', true);
 
 /*
 Create a mongoose connection to connect to the database.currently using local mongo instance

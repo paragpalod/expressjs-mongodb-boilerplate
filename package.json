@@ -19,68 +19,31 @@
     "url": "https://github.com/paragpalod/nodejs-expressjs-mongodb-api/issues"
   },
   "homepage": "https://github.com/paragpalod/nodejs-expressjs-mongodb-api#readme",
-  "eslintConfig": {
-    "env": {
-      "commonjs": true,
-      "es6": true,
-      "node": true
-    },
-    "extends": [
-      "standard"
-    ],
-    "globals": {
-      "Atomics": "readonly",
-      "SharedArrayBuffer": "readonly"
-    },
-    "parserOptions": {
-      "ecmaVersion": 2019
-    },
-    "rules": {
-      "no-throw-literal": 0,
-      "no-trailing-spaces": [
-        "error",
-        {
-          "skipBlankLines": true,
-          "ignoreComments": true
-        }
-      ],
-      "semi": [
-        "off",
-        "always"
-      ],
-      "no-unused-vars": [
-        "warn",
-        {
-          "vars": "all"
-        }
-      ]
-    }
-  },
   "nodemonConfig": {
     "events": {
       "restart": "npm run lint"
     }
   },
   "dependencies": {
-    "bcrypt": "^3.0.8",
+    "bcrypt": "^5.0.1",
     "colors": "^1.4.0",
     "cors": "^2.8.5",
-    "express": "^4.17.1",
-    "express-validator": "^6.5.0",
+    "express": "^4.17.3",
+    "express-validator": "^6.14.0",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.8.7",
+    "mongoose": "^6.2.6",
     "morgan": "^1.10.0",
-    "swagger-jsdoc": "^3.5.0",
-    "swagger-ui-express": "^4.1.2"
+    "nodemailer": "^6.7.2",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
-    "dotenv": "^8.2.0",
-    "eslint": "^6.8.0",
-    "eslint-config-standard": "^14.1.1",
-    "eslint-plugin-import": "^2.20.2",
+    "dotenv": "^16.0.0",
+    "eslint": "^8.11.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.25.4",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "nodemon": "^2.0.3"
+    "eslint-plugin-promise": "^6.0.0",
+    "nodemon": "^2.0.15"
   }
 }
